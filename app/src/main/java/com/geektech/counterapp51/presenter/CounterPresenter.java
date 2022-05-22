@@ -12,16 +12,24 @@ public class CounterPresenter implements CounterContracts.CounterPresenter {
     public void increment() {
         counterModel.increment();
         counterView.updateText(counterModel.getCount());
-        counterView.seeToast(counterModel.getToastNumber());
-        counterView.paintText(counterModel.getColorNumber());
+        if (counterModel.getCount() == counterModel.getToastNumber()) {
+            counterView.seeToast(counterModel.getToastNumber());
+        }
+        if (counterModel.getCount() == counterModel.getColorNumber()) {
+            counterView.paintText(counterModel.getColorNumber());
+        }
     }
 
     @Override
     public void decrement() {
         counterModel.decrement();
         counterView.updateText(counterModel.getCount());
-        counterView.seeToast(counterModel.getToastNumber());
-        counterView.paintText(counterModel.getColorNumber());
+        if (counterModel.getCount() == counterModel.getToastNumber()) {
+            counterView.seeToast(counterModel.getToastNumber());
+        }
+        if (counterModel.getCount() == counterModel.getColorNumber()) {
+            counterView.paintText(counterModel.getColorNumber());
+        }
     }
 
     @Override

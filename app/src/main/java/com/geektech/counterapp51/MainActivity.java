@@ -52,21 +52,11 @@ public class MainActivity extends AppCompatActivity implements CounterContracts.
 
     @Override
     public void seeToast(int toastNumber) {
-        String textTV = binding.counterText.getText().toString();
-        if (textTV.equals(String.valueOf(toastNumber))) {
-            Toast.makeText(this, "Поздравляю", Toast.LENGTH_SHORT).show();
-        }
-
+        Toast.makeText(this, "Поздравляю", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void paintText(int colorNumber) {
-        String textTV = binding.counterText.getText().toString();
-        if (textTV.equals(String.valueOf(colorNumber))) {
-            binding.counterText.setTextColor(Color.GREEN);
-        }
-        else{
-            binding.counterText.setTextColor(Color.BLACK);
-        }
+        binding.counterText.setTextColor(Color.GREEN);
     }
 }
